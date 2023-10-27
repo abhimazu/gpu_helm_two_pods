@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gpu2-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gpu2
+  template:
+    metadata:
+      labels:
+        app: gpu2
+    spec:
+      containers:
+        - name: gpu2
+          image: {{ .Values.gpu2.image }}
+          securityContext:
+            privileged: true
+          env:
+            - name: DISPLAY
+              value: {{ .Values.gpu2.environment.DISPLAY }}
+            # ... other environment variables for dlstreamer-pose

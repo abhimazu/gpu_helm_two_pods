@@ -1,0 +1,6 @@
+# Chart.yaml
+apiVersion: v2
+appVersion: 1.0.0
+name: gpu
+description: A Helm chart to deploy two benchmark containers on a single GPU
+version: 0.1.0

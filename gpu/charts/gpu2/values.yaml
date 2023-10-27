@@ -1,0 +1,5 @@
+# values.yaml
+gpu2:
+  image: abhimazu/gpu2:v1.0
+  environment:
+    DEVICE: "GPU"
